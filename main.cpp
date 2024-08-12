@@ -17,6 +17,10 @@ struct mesh
      vector<triangle> tris;
 };
 
+struct mat4x4
+{
+     float m[4][4] = { 0 };
+};
 
 
 
@@ -61,6 +65,13 @@ public:
    { 1.0f, 0.0f, 1.0f,    0.0f, 0.0f, 0.0f,    1.0f, 0.0f, 0.0f },
 
  };
+
+   //Projection Matrix
+   float fNear = 0.1f;
+   float fFar = 1000.0f;
+   float fFov = 90.0f;
+   float fAspectRatio = (float)ScreenHeight() / (float)ScreenWidth();
+   float fFovRad = 1.0f / tanf(fFov * 0.5f / 180.0f * 3.14159f);
 
 
        return true;
